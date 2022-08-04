@@ -58,7 +58,6 @@ import {TransportistaModule} from "./modelo/transportista/transportista.module";
       ProductoModule,
       ProductoImpuestoModule,
       TransportistaModule
-
   ],
   controllers: [AppController],
   providers: [AppService],

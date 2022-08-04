@@ -1,5 +1,12 @@
-import {PartialType} from "@nestjs/mapped-types";
-import {CreateDireccionDto} from "./create-direccion.dto";
+import {IsNumber, IsString} from "class-validator";
 
-export class UpdateDireccionDto extends PartialType(CreateDireccionDto){
+export class UpdateDireccionDto{
+    @IsNumber()
+    id_direccion
+    @IsString()
+    canton: string
+    @IsString()
+    parroquia: string
+    @IsString()
+    descripcion_exacta: string
 }
