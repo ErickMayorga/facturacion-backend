@@ -5,11 +5,12 @@ import {UsuarioController} from "../usuario/usuario.controller";
 import {UsuarioService} from "../usuario/usuario.service";
 import { DireccionController } from './direccion.controller';
 import { DireccionService } from './direccion.service';
+import {DireccionEntity} from "./dto/direccion.entity";
 
 @Module(
     {
         imports:[
-            TypeOrmModule.forFeature([UsuarioEntity])
+            TypeOrmModule.forFeature([DireccionEntity])
         ],
         controllers: [DireccionController],
         providers: [DireccionService]
