@@ -1,4 +1,14 @@
+import {IsNumber, IsString} from "class-validator";
+
 export class CreateUsuarioDto {
-    id: number
-    nombre: string
+    @IsString()
+    nombres: string
+    @IsString()
+    apellidos: string
+    @IsString()
+    correo_electronico: string
+    @IsString()
+    password: string
+    @IsNumber()
+    id_direccion: number
 }
