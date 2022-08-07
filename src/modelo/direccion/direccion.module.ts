@@ -10,7 +10,7 @@ import {DireccionEntity} from "./dto/direccion.entity";
             TypeOrmModule.forFeature([DireccionEntity])
         ],
         controllers: [DireccionController],
-        providers: [DireccionService]
+        providers: [DireccionService],
     }
 )
 export class DireccionModule {}

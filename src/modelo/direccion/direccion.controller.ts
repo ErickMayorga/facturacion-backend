@@ -1,8 +1,5 @@
 import {Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put} from '@nestjs/common';
 import {ApiTags} from "@nestjs/swagger";
-import {UsuarioService} from "../usuario/usuario.service";
-import {CreateUsuarioDto} from "../usuario/dto/create-usuario.dto";
-import {UpdateUsuarioDto} from "../usuario/dto/update-usuario.dto";
 import {DireccionService} from "./direccion.service";
 import {CreateDireccionDto} from "./dto/create-direccion.dto";
 import {UpdateDireccionDto} from "./dto/update-direccion.dto";
@@ -15,6 +12,12 @@ export class DireccionController {
     @Get()
     async getAll() {
         return await this.direccionService.getAll()
+    }
+
+    @Get('next')
+    async nextIndex(){
+        const direcciones = await this.direccionService.getAll()
+        return direcciones.length +1
     }
 
     @Get(':id')
