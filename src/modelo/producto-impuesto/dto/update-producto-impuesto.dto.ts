@@ -1,4 +1,4 @@
-import {IsNumber} from "class-validator";
+import {IsNumber, IsString} from "class-validator";
 
 export class UpdateProductoImpuestoDto {
     @IsNumber()
@@ -7,4 +7,6 @@ export class UpdateProductoImpuestoDto {
     id_producto: number
     @IsNumber()
     id_impuesto: number
+    @IsString()
+    categoria: string
 }
