@@ -5,6 +5,4 @@ export class CreateProductoImpuestoDto {
     id_producto: number
     @IsNumber()
     id_impuesto: number
-    @IsString()
-    categoria: string
 }

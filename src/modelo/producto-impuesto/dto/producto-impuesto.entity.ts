@@ -8,6 +8,4 @@ export class ProductoImpuestoEntity {
     id_producto: number
     @Column({type: 'int'})
     id_impuesto: number
-    @Column({type: 'varchar', length: 45})
-    categoria: string
 }
