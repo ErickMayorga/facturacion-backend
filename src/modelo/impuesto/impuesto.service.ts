@@ -21,6 +21,13 @@ export class ImpuestoService {
         return object
     }
 
+    async getImpuestos(categoria: string){
+        return await this.impuestoRepository
+            .createQueryBuilder("impuesto")
+            .where("impuesto.categoria = :categoria", { categoria: categoria })
+            .getMany()
+    }
+
     async create(dto: CreateImpuestoDto){
         const object = this.impuestoRepository.create(dto as any)
         return await this.impuestoRepository.save(object)

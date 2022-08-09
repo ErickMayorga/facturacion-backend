@@ -19,6 +19,11 @@ export class ImpuestoController {
         return await this.impuestoService.getOne(id)
     }
 
+    @Get('categoria/:cat')
+    async getImpuestos(@Param('cat') categoria: string){
+        return await this.impuestoService.getImpuestos(categoria)
+    }
+
     @Post()
     async create(@Body() dto: CreateImpuestoDto){
         return await this.impuestoService.create(dto)
