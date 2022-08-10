@@ -24,6 +24,13 @@ export class EmpresaService {
         return object
     }
 
+    async getEmpresa(idUsuario: number){
+        return this.empresaRepository
+            .createQueryBuilder('empresa')
+            .where("empresa.id_usuario = :id", { id: idUsuario })
+            .getOne()
+    }
+
     async create(dto: CreateEmpresaDto){
         const object = this.empresaRepository.create(dto as any)
         return await this.empresaRepository.save(object)

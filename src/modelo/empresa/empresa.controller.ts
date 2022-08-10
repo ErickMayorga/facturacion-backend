@@ -19,6 +19,11 @@ export class EmpresaController {
         return await this.empresaService.getOne(id)
     }
 
+    @Get('usuario/:idUsuario')
+    async getEmpresa(@Param('idUsuario', ParseIntPipe) id: number){
+        return await this.empresaService.getEmpresa(id)
+    }
+
     @Post()
     async create(@Body() dto: CreateEmpresaDto){
         return await this.empresaService.create(dto)
