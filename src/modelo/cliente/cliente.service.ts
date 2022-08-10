@@ -21,6 +21,13 @@ export class ClienteService {
         return object
     }
 
+    async getCliente(cedula: string){
+        return this.clienteRepository
+            .createQueryBuilder('cliente')
+            .where("cliente.numero_identificacion = :cedula", { cedula: cedula })
+            .getOne()
+    }
+
     async create(dto: CreateClienteDto){
         const object = this.clienteRepository.create(dto as any)
         return await this.clienteRepository.save(object)

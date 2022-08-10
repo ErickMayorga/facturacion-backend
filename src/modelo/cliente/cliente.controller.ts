@@ -19,6 +19,11 @@ export class ClienteController {
         return await this.clienteService.getOne(id)
     }
 
+    @Get('cedula/:cedula')
+    async getCliente(@Param('cedula') cedula: string){
+        return await this.clienteService.getCliente(cedula)
+    }
+
     @Post()
     async create(@Body() dto: CreateClienteDto){
         return await this.clienteService.create(dto)
