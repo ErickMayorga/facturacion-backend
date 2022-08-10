@@ -45,4 +45,14 @@ export class ProductoImpuestoService {
     async delete(id: number){
         return await this.productoImpuestoRepository.delete(id)
     }
+
+    async deleteImpuestos(idProducto: number){
+        const impuestosProducto = await this.getImpuestos(idProducto)
+        let objectsDeleted = []
+        for(let object of impuestosProducto){
+            const objectDeleted = await this.productoImpuestoRepository.delete(object.id_producto_impuesto)
+            objectsDeleted.push(objectDeleted)
+        }
+        return objectsDeleted
+    }
 }

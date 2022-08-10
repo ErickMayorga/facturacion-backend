@@ -38,4 +38,9 @@ export class ProductoImpuestoController {
     async delete(@Param('id', ParseIntPipe) id: number){
         return await this.productoImpuestoService.delete(id)
     }
+
+    @Delete('producto/:idProducto')
+    async deleteImpuestos(@Param('idProducto', ParseIntPipe) id: number){
+        return await this.productoImpuestoService.deleteImpuestos(id)
+    }
 }
