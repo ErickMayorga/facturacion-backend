@@ -21,6 +21,13 @@ export class FacturaService {
         return object
     }
 
+    async getNextIndex(idEmpresa: number){
+        return this.facturaRepository
+            .createQueryBuilder('factura')
+            .where("factura.id_empresa = :id", { id: idEmpresa })
+            .getMany()
+    }
+
     async create(dto: CreateFacturaDto){
         const object = this.facturaRepository.create(dto as any)
         return await this.facturaRepository.save(object)

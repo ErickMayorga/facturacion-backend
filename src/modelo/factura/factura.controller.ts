@@ -19,6 +19,11 @@ export class FacturaController {
         return await this.facturaService.getOne(id)
     }
 
+    @Get('empresa/:idEmpresa')
+    async getNextIndex(@Param('idEmpresa', ParseIntPipe) id: number){
+        return await this.facturaService.getNextIndex(id)
+    }
+
     @Post()
     async create(@Body() dto: CreateFacturaDto){
         return await this.facturaService.create(dto)

@@ -14,14 +14,19 @@ export class ClienteController {
         return await this.clienteService.getAll()
     }
 
+    @Get('usuario/:idUsuario')
+    async getClientes(@Param('idUsuario', ParseIntPipe) id: number){
+        return await this.clienteService.getClientes(id)
+    }
+
     @Get(':id')
     async getOne(@Param('id', ParseIntPipe) id: number){
         return await this.clienteService.getOne(id)
     }
 
-    @Get('cedula/:cedula')
-    async getCliente(@Param('cedula') cedula: string){
-        return await this.clienteService.getCliente(cedula)
+    @Get('cedula/:idUsuario/:cedula')
+    async getCliente(@Param('idUsuario', ParseIntPipe) id: number, @Param('cedula') cedula: string){
+        return await this.clienteService.getCliente(id,cedula)
     }
 
     @Post()

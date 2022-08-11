@@ -15,16 +15,24 @@ export class ClienteService {
         return await this.clienteRepository.find()
     }
 
+    async getClientes(idUsuario: number){
+        return this.clienteRepository
+            .createQueryBuilder('cliente')
+            .where("cliente.id_usuario = :id", { id: idUsuario })
+            .getMany()
+    }
+
     async getOne(id: number){
         const object = await this.clienteRepository.findOne({where: {id_cliente: id}})
         if(!object) throw new NotFoundException()
         return object
     }
 
-    async getCliente(cedula: string){
+    async getCliente(idUsuario: number, cedula: string){
         return this.clienteRepository
             .createQueryBuilder('cliente')
-            .where("cliente.numero_identificacion = :cedula", { cedula: cedula })
+            .where("cliente.id_usuario = :id", { id: idUsuario })
+            .andWhere("cliente.numero_identificacion = :cedula", { cedula: cedula })
             .getOne()
     }
 
