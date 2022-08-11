@@ -1,6 +1,4 @@
 import {Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put} from '@nestjs/common';
-import {CreateUsuarioDto} from "../usuario/dto/create-usuario.dto";
-import {UpdateUsuarioDto} from "../usuario/dto/update-usuario.dto";
 import {ApiTags} from "@nestjs/swagger";
 import {TransportistaService} from "./transportista.service";
 import {CreateTransportistaDto} from "./dto/create-transportista.dto";
@@ -16,9 +14,19 @@ export class TransportistaController {
         return await this.transportistaService.getAll()
     }
 
+    @Get('usuario/:idUsuario')
+    async getTransportistas(@Param('idUsuario', ParseIntPipe) id: number){
+        return await this.transportistaService.getTransportistas(id)
+    }
+
     @Get(':id')
     async getOne(@Param('id', ParseIntPipe) id: number){
         return await this.transportistaService.getOne(id)
+    }
+
+    @Get('cedula/:idUsuario/:cedula')
+    async getTransportista(@Param('idUsuario', ParseIntPipe) id: number, @Param('cedula') cedula: string){
+        return await this.transportistaService.getTransportista(id,cedula)
     }
 
     @Post()

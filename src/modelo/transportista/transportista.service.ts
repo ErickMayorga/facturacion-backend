@@ -15,10 +15,25 @@ export class TransportistaService {
         return await this.transportistaRepository.find()
     }
 
+    async getTransportistas(idUsuario: number){
+        return this.transportistaRepository
+            .createQueryBuilder('transportista')
+            .where("transportista.id_usuario = :id", { id: idUsuario })
+            .getMany()
+    }
+
     async getOne(id: number){
         const object = await this.transportistaRepository.findOne({where: {id_transportista: id}})
         if(!object) throw new NotFoundException()
         return object
+    }
+
+    async getTransportista(idUsuario: number, cedula: string){
+        return this.transportistaRepository
+            .createQueryBuilder('transportista')
+            .where("transportista.id_usuario = :id", { id: idUsuario })
+            .andWhere("transportista.numero_identificacion = :cedula", { cedula: cedula })
+            .getOne()
     }
 
     async create(dto: CreateTransportistaDto){
