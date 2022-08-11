@@ -1,4 +1,4 @@
-import {IsDate, IsNumber, IsString} from "class-validator";
+import {IsBoolean, IsDate, IsNumber, IsString} from "class-validator";
 
 export class UpdateFacturaDto {
     @IsNumber()
@@ -29,4 +29,6 @@ export class UpdateFacturaDto {
     total_sin_iva: number
     @IsNumber()
     total_con_iva: number
+    @IsBoolean()
+    habilitado: boolean
 }

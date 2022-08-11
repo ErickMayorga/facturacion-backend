@@ -44,4 +44,8 @@ export class FacturaService {
     async delete(id: number){
         return await this.facturaRepository.delete(id)
     }
+
+    async deshabilitarComprobante(id: number){
+        return this.facturaRepository.update(id, { habilitado: false })
+    }
 }

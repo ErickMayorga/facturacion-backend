@@ -35,6 +35,11 @@ export class FacturaController {
         return await this.facturaService.update(id, dto)
     }
 
+    @Delete('/deshabilitar/:id')
+    async deshabilitar(@Param('id', ParseIntPipe) id: number){
+        return await this.facturaService.deshabilitarComprobante(id)
+    }
+
     @Delete(':id')
     async delete(@Param('id', ParseIntPipe) id: number){
         return await this.facturaService.delete(id)

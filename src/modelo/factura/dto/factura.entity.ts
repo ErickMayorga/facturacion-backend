@@ -30,4 +30,6 @@ export class FacturaEntity {
     total_sin_iva: number
     @Column({type: 'float'})
     total_con_iva: number
+    @Column({type: "boolean"})
+    habilitado: boolean
 }
