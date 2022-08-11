@@ -15,6 +15,13 @@ export class ProductoService {
         return await this.productoRepository.find()
     }
 
+    async getProductos(idUsuario: number){
+        return this.productoRepository
+            .createQueryBuilder('producto')
+            .where("producto.id_usuario = :id", { id: idUsuario })
+            .getMany()
+    }
+
     async getOne(id: number){
         const object = await this.productoRepository.findOne({where: {id_producto: id}})
         if(!object) throw new NotFoundException()

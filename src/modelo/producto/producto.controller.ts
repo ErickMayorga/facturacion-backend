@@ -19,6 +19,11 @@ export class ProductoController {
         return await this.productoService.getOne(id)
     }
 
+    @Get('usuario/:idUsuario')
+    async getProductos(@Param('idUsuario', ParseIntPipe) id: number){
+        return await this.productoService.getProductos(id)
+    }
+
     @Post()
     async create(@Body() dto: CreateProductoDto){
         return await this.productoService.create(dto)
