@@ -1,4 +1,4 @@
-import {IsBoolean, IsDate, IsNumber, IsString} from "class-validator";
+import {IsBoolean, IsDate, IsDateString, IsNumber, IsString} from "class-validator";
 
 export class CreateFacturaDto {
     @IsNumber()
@@ -7,7 +7,7 @@ export class CreateFacturaDto {
     numero_comprobante: string
     @IsNumber()
     id_cliente: number
-    @IsDate()
+    @IsDateString()
     fecha_emision: Date
     @IsString()
     clave_acceso: string
