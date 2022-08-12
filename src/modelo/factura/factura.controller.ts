@@ -20,8 +20,8 @@ export class FacturaController {
     }
 
     @Get('empresa/:idEmpresa')
-    async getNextIndex(@Param('idEmpresa', ParseIntPipe) id: number){
-        return await this.facturaService.getNextIndex(id)
+    async getFacturas(@Param('idEmpresa', ParseIntPipe) id: number){
+        return await this.facturaService.getFacturas(id)
     }
 
     @Post()

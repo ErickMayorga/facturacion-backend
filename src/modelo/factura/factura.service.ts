@@ -21,7 +21,7 @@ export class FacturaService {
         return object
     }
 
-    async getNextIndex(idEmpresa: number){
+    async getFacturas(idEmpresa: number){
         return this.facturaRepository
             .createQueryBuilder('factura')
             .where("factura.id_empresa = :id", { id: idEmpresa })
