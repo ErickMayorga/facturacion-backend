@@ -21,10 +21,10 @@ export class FacturaDetalleService {
         return object
     }
 
-    async getDetalle(idFactura: number){
+    async getDetalle(idComprobante: number){
         return await this.facturaDetalleRepository
             .createQueryBuilder('factura_detalle')
-            .where("factura_detalle.id_factura = :id", { id: idFactura })
+            .where("factura_detalle.id_factura = :id", { id: idComprobante })
             .getMany()
     }
 
@@ -45,10 +45,10 @@ export class FacturaDetalleService {
         return await this.facturaDetalleRepository.delete(id)
     }
 
-    async deleteDetalle(idFactura: number){
-        const detalleFactura = await this.getDetalle(idFactura)
+    async deleteDetalle(idComprobante: number){
+        const detalleComprobante = await this.getDetalle(idComprobante)
         let objectsDeleted = []
-        for(let object of detalleFactura){
+        for(let object of detalleComprobante){
             const objectDeleted = await this.facturaDetalleRepository.delete(object.id_factura_detalle)
             objectsDeleted.push(objectDeleted)
         }

@@ -20,7 +20,7 @@ export class FacturaPagoController {
     }
 
     @Get('factura/:idFactura')
-    async getDetalle(@Param('idFactura', ParseIntPipe) id: number){
+    async getPagos(@Param('idFactura', ParseIntPipe) id: number){
         return await this.facturaPagoService.getPagos(id)
     }
 

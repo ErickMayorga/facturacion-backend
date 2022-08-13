@@ -19,8 +19,8 @@ export class FacturaDetalleController {
         return await this.facturaDetalleService.getOne(id)
     }
 
-    @Get('factura/:idFactura')
-    async getDetalle(@Param('idFactura', ParseIntPipe) id: number){
+    @Get('comprobante/:idComprobante')
+    async getDetalle(@Param('idComprobante', ParseIntPipe) id: number){
         return await this.facturaDetalleService.getDetalle(id)
     }
 
@@ -40,8 +40,8 @@ export class FacturaDetalleController {
         return await this.facturaDetalleService.delete(id)
     }
 
-    @Delete('factura/:idFactura')
-    async deleteDetalle(@Param('idFactura', ParseIntPipe) id: number){
+    @Delete('comprobante/:idComprobante')
+    async deleteDetalle(@Param('idComprobante', ParseIntPipe) id: number){
         return await this.facturaDetalleService.deleteDetalle(id)
     }
 }
