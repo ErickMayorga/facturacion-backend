@@ -1,12 +1,10 @@
 import {Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put} from '@nestjs/common';
-import {CreateFacturaPagoDto} from "../factura-pago/dto/create-factura-pago.dto";
-import {UpdateFacturaPagoDto} from "../factura-pago/dto/update-factura-pago.dto";
 import {ApiTags} from "@nestjs/swagger";
 import {NotaDeDebitoPagoService} from "./nota-de-debito-pago.service";
 import {CreateNotaDebitoPagoDto} from "./dto/create-nota-debito-pago.dto";
 import {UpdateNotaDebitoPagoDto} from "./dto/update-nota-debito-pago.dto";
 
-@ApiTags('Notas de débito detalle')
+@ApiTags('Notas de débito pago')
 @Controller('nota-de-debito-pago')
 export class NotaDeDebitoPagoController {
     constructor(private readonly notaDebitoPagoService: NotaDeDebitoPagoService) {}
