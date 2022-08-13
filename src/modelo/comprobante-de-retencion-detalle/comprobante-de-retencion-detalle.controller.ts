@@ -5,7 +5,7 @@ import {CreateRetencionDetalleDto} from "./dto/create-retencion-detalle.dto";
 import {UpdateRetencionDetalleDto} from "./dto/update-retencion-detalle.dto";
 
 @ApiTags('Retención Detalle')
-@Controller('retencion-detalle')
+@Controller('comprobante-de-retencion-detalle')
 export class ComprobanteDeRetencionDetalleController {
     constructor(private readonly retencionDetalleService: ComprobanteDeRetencionDetalleService) {}
 

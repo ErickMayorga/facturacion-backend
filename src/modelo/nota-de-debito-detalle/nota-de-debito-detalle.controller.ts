@@ -1,10 +1,10 @@
 import {Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put} from '@nestjs/common';
-import {CreateNotaCreditoDetalleDto} from "../nota-de-credito-detalle/dto/create-nota-credito-detalle.dto";
-import {UpdateNotaCreditoDetalleDto} from "../nota-de-credito-detalle/dto/update-nota-credito-detalle.dto";
 import {NotaDeDebitoDetalleService} from "./nota-de-debito-detalle.service";
 import {CreateNotaDebitoDetalleDto} from "./dto/create-nota-debito-detalle.dto";
 import {UpdateNotaDebitoDetalleDto} from "./dto/update-nota-debito-detalle.dto";
+import {ApiTags} from "@nestjs/swagger";
 
+@ApiTags('Notas de débito detalle')
 @Controller('nota-de-debito-detalle')
 export class NotaDeDebitoDetalleController {
     constructor(private readonly notaDebitoDetalleService: NotaDeDebitoDetalleService) {}
