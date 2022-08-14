@@ -11,4 +11,10 @@ export class UpdateNotaCreditoDetalleDto {
     descuento: number
     @IsNumber()
     total_producto: number
+    @IsNumber()
+    valor_iva: number
+    @IsNumber()
+    valor_ice: number
+    @IsNumber()
+    valor_irbpnr: number
 }

@@ -15,6 +15,8 @@ export class FacturaDetalleEntity {
     @Column({type: 'float'})
     total_producto: number
     @Column({type: 'float'})
+    valor_iva: number
+    @Column({type: 'float'})
     valor_ice: number
     @Column({type: 'float'})
     valor_irbpnr: number

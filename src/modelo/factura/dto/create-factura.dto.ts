@@ -26,7 +26,11 @@ export class CreateFacturaDto {
     @IsNumber()
     total_sin_iva: number
     @IsNumber()
-    total_con_iva: number
+    total_iva: number
+    @IsNumber()
+    total_ice: number
+    @IsNumber()
+    total_irbpnr: number
     @IsBoolean()
     habilitado: boolean
 }
