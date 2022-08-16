@@ -29,4 +29,6 @@ export class UpdateNotaCreditoDto {
     habilitado: boolean
     @IsNumber()
     id_empresa: number
+    @IsNumber()
+    importe_total: number
 }

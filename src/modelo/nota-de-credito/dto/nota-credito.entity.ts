@@ -30,4 +30,6 @@ export class NotaCreditoEntity {
     total_irbpnr: number
     @Column({type: "boolean"})
     habilitado: boolean
+    @Column({type: 'float'})
+    importe_total: number
 }
