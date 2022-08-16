@@ -48,7 +48,7 @@ export class FacturaController {
 
     @Delete('/guia-remision/:idFactura/:guiaRemision')
     async asignarGuiaRemision(@Param('idFactura', ParseIntPipe) idFactura: number,
-                              @Param('idFactura') guiaRemision: string){
+                              @Param('guiaRemision') guiaRemision: string){
         return await this.facturaService.asignarGuiaRemision(idFactura, guiaRemision)
     }
 
