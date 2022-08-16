@@ -15,4 +15,6 @@ export class UpdateRetencionDto {
     clave_acceso: string
     @IsBoolean()
     habilitado: boolean
+    @IsNumber()
+    total_retenido: number
 }

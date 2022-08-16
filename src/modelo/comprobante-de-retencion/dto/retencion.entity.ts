@@ -16,4 +16,6 @@ export class RetencionEntity {
     clave_acceso: string
     @Column({type: "boolean"})
     habilitado: boolean
+    @Column({type: 'float'})
+    total_retenido: number
 }
