@@ -36,6 +36,10 @@ export class FacturaService {
             .getMany()
     }
 
+    async asignarGuiaRemision(idFactura: number, guiaRemision: string){
+        return this.facturaRepository.update(idFactura, { guia_de_remision: guiaRemision })
+    }
+
     async create(dto: CreateFacturaDto){
         const object = this.facturaRepository.create(dto as any)
         return await this.facturaRepository.save(object)

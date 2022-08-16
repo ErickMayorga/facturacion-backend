@@ -46,6 +46,12 @@ export class FacturaController {
         return await this.facturaService.deshabilitarComprobante(id)
     }
 
+    @Put('/guia-remision/:idFactura')
+    async asignarGuiaRemision(@Param('idFactura', ParseIntPipe) idFactura: number,
+                              @Body() guiaRemision: string){
+        return await this.facturaService.asignarGuiaRemision(idFactura, guiaRemision)
+    }
+
     @Delete(':id')
     async delete(@Param('id', ParseIntPipe) id: number){
         return await this.facturaService.delete(id)
