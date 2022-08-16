@@ -28,6 +28,14 @@ export class FacturaService {
             .getMany()
     }
 
+    async getFacturasPorCliente(idEmpresa: number, idCliente: number){
+        return this.facturaRepository
+            .createQueryBuilder('factura')
+            .where("factura.id_empresa = :idEmpresa", { idEmpresa: idEmpresa })
+            .andWhere("factura.id_cliente = :idCliente", { idCliente: idCliente })
+            .getMany()
+    }
+
     async create(dto: CreateFacturaDto){
         const object = this.facturaRepository.create(dto as any)
         return await this.facturaRepository.save(object)

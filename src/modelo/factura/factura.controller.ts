@@ -24,6 +24,12 @@ export class FacturaController {
         return await this.facturaService.getFacturas(id)
     }
 
+    @Get('cliente/:idEmpresa/:idCliente')
+    async getFacturasPorCliente(@Param('idEmpresa', ParseIntPipe) idEmpresa: number,
+                                @Param('idCliente', ParseIntPipe) idCliente: number){
+        return await this.facturaService.getFacturasPorCliente(idEmpresa, idCliente)
+    }
+
     @Post()
     async create(@Body() dto: CreateFacturaDto){
         return await this.facturaService.create(dto)
