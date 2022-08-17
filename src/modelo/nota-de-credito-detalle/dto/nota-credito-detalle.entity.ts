@@ -18,4 +18,6 @@ export class NotaCreditoDetalleEntity {
     valor_ice: number
     @Column({type: 'float'})
     valor_irbpnr: number
+    @Column({type: 'int'})
+    id_producto: number
 }

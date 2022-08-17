@@ -17,4 +17,6 @@ export class UpdateNotaCreditoDetalleDto {
     valor_ice: number
     @IsNumber()
     valor_irbpnr: number
+    @IsNumber()
+    id_producto: number
 }
